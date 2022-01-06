@@ -1,0 +1,29 @@
+{
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "css.validate": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80],
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.trimAutoWhitespace": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.hg": true,
+      "**/.svn": true,
+      "**/CVS": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "prettier.requireConfig": true,
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "typescript.preferences.importModuleSpecifier": "non-relative"
+  }
+  
