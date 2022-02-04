@@ -115,6 +115,6 @@
     "edition": "octane"
   },
   "dependencies": {
-    "ember-cli": "^4.1.0"
+    "ember-cli": "^4.1.1"
   }
 }
