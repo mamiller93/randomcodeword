@@ -1,8 +1,8 @@
 {
-  "name": "elevator",
+  "name": "randomcodeword",
   "version": "0.0.0",
   "private": true,
-  "description": "Small example of an elevator implementation in ember",
+  "description": "Generate random codewords",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
+    "@ember/render-modifiers": "^2.0.4",
     "@ember/test-helpers": "^2.6.0",
     "@fullhuman/postcss-purgecss": "^4.1.3",
     "@glimmer/component": "^1.0.4",
@@ -73,6 +74,9 @@
     "ember-cli-typescript": "^4.2.1",
     "ember-cli-typescript-blueprints": "^3.0.0",
     "ember-cli-update": "^1.0.1",
+    "ember-concurrency": "^2.2.0",
+    "ember-concurrency-async": "^1.0.0",
+    "ember-concurrency-ts": "^0.3.1",
     "ember-data": "^4.1.0",
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.1.1",

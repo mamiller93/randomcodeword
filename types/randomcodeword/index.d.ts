@@ -1,3 +1,6 @@
+import 'ember-concurrency-async';
+import 'ember-concurrency-ts/async';
+
 import Ember from 'ember';
 import { Route } from '@ember/routing';
 

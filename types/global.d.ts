@@ -1,5 +1,5 @@
 // Types for compiled templates
-declare module 'elevator/templates/*' {
+declare module 'randomcodeword/templates/*' {
   import { TemplateFactory } from 'htmlbars-inline-precompile';
 
   const tmpl: TemplateFactory;

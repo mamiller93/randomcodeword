@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'elevator',
+    modulePrefix: 'randomcodeword',
     environment,
     rootURL: '/',
     locationType: 'history',

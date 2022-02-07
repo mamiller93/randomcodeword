@@ -1,3 +1,35 @@
-<div class='my-10' {{on-key '_all' this.triggerOnAlphaNumeric}}>
+{{#if this.overlay.isShowing}}
+  <div
+    class='w-screen h-screen absolute top-0 left-0 backdrop-blur-sm bg-gray-600 bg-opacity-90'
+  >
+    <Helper />
+  </div>
+{{/if}}
 
+<div
+  class='flex flex-col h-full min-h-screen'
+  {{on-key 'r' this.triggerRandom}}
+  {{on-key 's' this.useSystemSetting}}
+  {{on-key 'd' this.toggleDarkMode event='keyup'}}
+  {{on-key 'ArrowRight' this.triggerRandom}}
+  {{on-key 'ArrowLeft' this.triggerBack}}
+  {{on-key 'ArrowUp' (fn this.triggered 1)}}
+  {{on-key 'ArrowDown' (fn this.triggered -1)}}
+  {{did-insert (perform this.words)}}
+>
+  <div class='m-auto text-center pt-16 pb-8'>
+    <h1
+      class='text-gray-500 dark:text-gray-400 uppercase font-semibold text-sm -mt-[2rem]'
+    >Your codeword is</h1>
+
+    {{#if this.words.isRunning}}
+      <p class='dark:text-gray-400'>{{this.loadingStatement}}</p>
+    {{else}}
+      <p
+        class='text-8xl capitalize dark:text-gray-50'
+        style={{this.fontSize}}
+      >{{this.qJoined}}</p>
+    {{/if}}
+  </div>
+  <Footer class='py-2' />
 </div>

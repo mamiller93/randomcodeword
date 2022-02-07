@@ -21,8 +21,8 @@
     "module": "ES6",
     "experimentalDecorators": true,
     "paths": {
-      "elevator/tests/*": ["tests/*"],
-      "elevator/*": ["app/*"],
+      "randomcodeword/tests/*": ["tests/*"],
+      "randomcodeword/*": ["app/*"],
       "*": ["types/*"]
     }
   },
