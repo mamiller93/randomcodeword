@@ -18,9 +18,10 @@ export default class IndexController extends Controller {
   @service declare overlay: OverlayService;
 
   inputGuid = guidFor(this);
-  queryParams = ['limit', 'q'];
+  queryParams = ['limit', 'q', 'partOfSpeech'];
 
   @tracked q: string = '';
+  @tracked partOfSpeech: string = 'noun,verb';
 
   get qJoined() {
     return this.q.split(',').join(' ');
@@ -46,6 +47,10 @@ export default class IndexController extends Controller {
         url.searchParams.append('limit', `${this.limit}`);
       }
 
+      if (this.partOfSpeech) {
+        url.searchParams.append('partOfSpeech', `${this.partOfSpeech}`);
+      }
+
       let response = await fetch(url.toString());
       words = (await response.json()).words;
     }
@@ -57,14 +62,6 @@ export default class IndexController extends Controller {
   get fontSize() {
     const size = 8 - this.limit / 4;
     return htmlSafe(`font-size: calc(100% + ${size}vw)`);
-  }
-
-  activate() {
-    if (this.limit > this.max) {
-      this.limit = this.max;
-    } else if (this.limit < 1) {
-      this.limit = 1;
-    }
   }
 
   @action
@@ -90,11 +87,28 @@ export default class IndexController extends Controller {
   toggleDarkMode() {
     const element = document.documentElement;
     element.classList.toggle('dark');
+
+    if (element.classList.contains('dark')) {
+      localStorage.theme = 'dark';
+    } else {
+      localStorage.theme = 'light';
+    }
   }
 
   @action
   useSystemSetting() {
     localStorage.removeItem('theme');
+
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
     console.log('Using system setting');
   }
 }
