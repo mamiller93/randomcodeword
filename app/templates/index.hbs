@@ -4,7 +4,14 @@
   <div
     class='w-screen h-screen absolute top-0 left-0 backdrop-blur-sm bg-gray-600 bg-opacity-90'
   >
-    <Helper />
+    <Helper
+      @onS={{this.useSystemSetting}}
+      @onD={{this.toggleDarkMode}}
+      @onArrowRight={{this.triggerRandom}}
+      @onArrowLeft={{this.triggerBack}}
+      @onArrowUp={{fn this.triggered 1}}
+      @onArrowDown={{fn this.triggered -1}}
+    />
   </div>
 {{/if}}
 

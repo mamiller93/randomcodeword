@@ -12,9 +12,6 @@ module.exports = function (deployTarget) {
     'revision-data': {
       type: 'git-commit',
     },
-    pipeline: {
-      activateOnDeploy: true,
-    },
   };
 
   ENV['gcloud-storage'] = {
@@ -23,6 +20,7 @@ module.exports = function (deployTarget) {
       client_email: gcsServiceAccountCreds.client_email,
     },
     projectId: projectId,
+    makePublic: true,
   };
 
   ENV['gcs-index'] = {
