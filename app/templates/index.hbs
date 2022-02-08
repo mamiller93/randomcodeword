@@ -1,3 +1,5 @@
+{{page-title this.qJoined ' (Codeword)'}}
+
 {{#if this.overlay.isShowing}}
   <div
     class='w-screen h-screen absolute top-0 left-0 backdrop-blur-sm bg-gray-600 bg-opacity-90'
@@ -26,7 +28,7 @@
       <p class='dark:text-gray-400'>{{this.loadingStatement}}</p>
     {{else}}
       <p
-        class='text-8xl capitalize dark:text-gray-50'
+        class='text-8xl dark:text-gray-50'
         style={{this.fontSize}}
       >{{this.qJoined}}</p>
     {{/if}}

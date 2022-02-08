@@ -15,6 +15,11 @@ module.exports = function (environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false,
       },
+      URL: '',
+    },
+
+    pageTitle: {
+      replace: true,
     },
 
     APP: {
@@ -34,6 +39,7 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.EmberENV.URL = 'http://localhost:8080';
   }
 
   if (environment === 'test') {
@@ -50,6 +56,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.EmberENV.URL = 'https://backend-ov7ttp5cna-uc.a.run.app';
   }
 
   return ENV;

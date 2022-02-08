@@ -8,6 +8,7 @@ import { htmlSafe } from '@ember/template';
 import { keepLatestTask } from 'ember-concurrency';
 import { taskFor } from 'ember-concurrency-ts';
 import { ModelFrom } from 'randomcodeword';
+import ENV from 'randomcodeword/config/environment';
 import { loaders } from 'randomcodeword/helpers/loaders';
 import IndexRoute from 'randomcodeword/routes';
 import OverlayService from 'randomcodeword/services/overlay';
@@ -41,7 +42,7 @@ export default class IndexController extends Controller {
     if (forceReload && forceReload.length === 0 && this.q) {
       words = this.q.split(',');
     } else {
-      const url = new URL('http://127.0.0.1:5000/get');
+      const url = new URL(`${ENV.EmberENV.URL}/api/v1/`);
 
       if (this.limit && Number.isInteger(this.limit)) {
         url.searchParams.append('limit', `${this.limit}`);

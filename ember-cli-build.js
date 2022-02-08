@@ -18,6 +18,25 @@ module.exports = function (defaults) {
     sourcemaps: {
       enabled: SOURCEMAPS,
     },
+    'ember-cli-favicon': {
+      enabled: environment != 'test', // By default favicons are NOT generated in TEST env to speedup builds
+
+      iconPath: 'favicon.png', // icon path related to `public` folder
+
+      // See the [favicons](https://github.com/itgalaxy/favicons) module for details on the available configuration options.
+      faviconsConfig: {
+        icons: {
+          favicons: true,
+          android: isProduction,
+          appleIcon: isProduction,
+          appleStartup: isProduction,
+          coast: isProduction,
+          firefox: isProduction,
+          windows: isProduction,
+          yandex: isProduction,
+        },
+      },
+    },
     postcssOptions: {
       compile: {
         map: SOURCEMAPS,
