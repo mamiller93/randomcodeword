@@ -2,7 +2,7 @@
 
 {{#if this.overlay.isShowing}}
   <div
-    class='w-screen h-screen absolute top-0 left-0 backdrop-blur-sm bg-gray-600 bg-opacity-90'
+    class='fixed w-full min-h-full top-0 left-0 right-0 backdrop-blur-sm bg-gray-600 bg-opacity-90'
   >
     <Helper
       @onS={{this.useSystemSetting}}
@@ -11,6 +11,7 @@
       @onArrowLeft={{this.triggerBack}}
       @onArrowUp={{fn this.triggered 1}}
       @onArrowDown={{fn this.triggered -1}}
+      class='overflow-auto'
     />
   </div>
 {{/if}}

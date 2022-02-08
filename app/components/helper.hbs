@@ -1,42 +1,44 @@
-<div
-  class='m-auto flex flex-col justify-center gap-8 min-h-screen h-full'
-  {{on-key 'h' (set this 'overlay.isShowing' false)}}
->
-  <div class='grid grid-cols-3 gap-0'>
-    <p class='text-md text-gray-50 col-span-4 text-center'>Longer</p>
-    <div class='col-span-4 flex items-end mx-auto'>
-      <div class='flex items-center w-[200px] justify-end'>
-        <p class='text-md text-gray-50'>Go to previous</p>
-        <Key @key='◀' @onClick={{@onArrowLeft}} />
+<div ...attributes>
+  <div
+    class='m-auto flex flex-col justify-center gap-8 min-h-screen h-full'
+    {{on-key 'h' (set this 'overlay.isShowing' false)}}
+  >
+    <div class='grid grid-cols-3 gap-0'>
+      <p class='text-md text-gray-50 col-span-4 text-center'>Longer</p>
+      <div class='col-span-4 flex items-end mx-auto'>
+        <div class='flex items-center w-[200px] justify-end'>
+          <p class='text-md text-gray-50'>Go to previous</p>
+          <Key @key='◀' @onClick={{@onArrowLeft}} />
+        </div>
+        <div>
+          <Key @key='▲' @onClick={{@onArrowUp}} />
+          <Key @key='▼' @onClick={{@onArrowDown}} />
+        </div>
+        <div class='flex items-center w-[200px] justify-start'>
+          <Key @key='▶' @onClick={{@onArrowRight}} />
+          <p class='text-md text-gray-50'>Get the next</p>
+        </div>
       </div>
-      <div>
-        <Key @key='▲' @onClick={{@onArrowUp}} />
-        <Key @key='▼' @onClick={{@onArrowDown}} />
-      </div>
-      <div class='flex items-center w-[200px] justify-start'>
-        <Key @key='▶' @onClick={{@onArrowRight}} />
-        <p class='text-md text-gray-50'>Get the next</p>
-      </div>
+      <p class='text-md text-gray-50 col-span-4 text-center'>Shorter</p>
     </div>
-    <p class='text-md text-gray-50 col-span-4 text-center'>Shorter</p>
-  </div>
-  <div class='flex items-center justify-center'>
-    <Key @key='R' @onClick={{@onArrowRight}} />
-    <p class='text-md text-gray-50'>reload for new codeword</p>
-  </div>
-  <div class='flex flex-col items-center justify-center md:flex-row'>
     <div class='flex items-center justify-center'>
-      <Key @key='D' @onClick={{@onD}} />
-      <p class='text-md text-gray-50'>toggle darkmode</p>
+      <Key @key='R' @onClick={{@onArrowRight}} />
+      <p class='text-md text-gray-50'>reload for new codeword</p>
     </div>
-    <p class='text-xs text-gray-300 pl-4 pr-2 font-bold uppercase'>or</p>
+    <div class='flex flex-col items-center justify-center md:flex-row'>
+      <div class='flex items-center justify-center'>
+        <Key @key='D' @onClick={{@onD}} />
+        <p class='text-md text-gray-50'>toggle darkmode</p>
+      </div>
+      <p class='text-xs text-gray-300 pl-4 pr-2 font-bold uppercase'>or</p>
+      <div class='flex items-center justify-center'>
+        <Key @key='S' @onClick={{@onS}} />
+        <p class='text-md text-gray-50'>use system setting</p>
+      </div>
+    </div>
     <div class='flex items-center justify-center'>
-      <Key @key='S' @onClick={{@onS}} />
-      <p class='text-md text-gray-50'>use system setting</p>
+      <Key @key='H' @onClick={{this.overlay.toggle}} />
+      <p class='text-md text-gray-50'>hide / show help</p>
     </div>
-  </div>
-  <div class='flex items-center justify-center'>
-    <Key @key='H' @onClick={{this.overlay.toggle}} />
-    <p class='text-md text-gray-50'>hide / show help</p>
   </div>
 </div>
