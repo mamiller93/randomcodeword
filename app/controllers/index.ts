@@ -33,6 +33,7 @@ export default class IndexController extends Controller {
     return loaders[random];
   }
 
+  @tracked showCopied = false;
   @tracked limit = 1;
   max = 15;
 
@@ -111,6 +112,22 @@ export default class IndexController extends Controller {
     }
 
     console.log('Using system setting');
+  }
+
+  @action
+  copyToClipboard() {
+    const url = window.location.href;
+    this.copyTextToClipboard(url);
+
+    this.showCopied = true;
+    setTimeout(() => (this.showCopied = false), 1300);
+  }
+
+  copyTextToClipboard(text: string) {
+    if (!navigator.clipboard) {
+      return;
+    }
+    return navigator.clipboard.writeText(text);
   }
 }
 
